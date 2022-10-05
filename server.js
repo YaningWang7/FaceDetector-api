@@ -15,12 +15,9 @@ const app = express();
 const db = knex({
     client: 'pg',
     connection: {
-        host: 'postgresql-round-04717',
-        user: 'wangsfamily',
-        password: '',
-        database: 'smart-brain'
-    },
-    searchPath: ['knex', 'public'],
+        host: process.env.DATABASE_URL,
+        ssl: true,
+    }
   });
 
 // turn the request into json
