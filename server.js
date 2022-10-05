@@ -51,7 +51,7 @@ app.post('/predict', handlePredict());
 
 // Let the app listen to port
 // In bash, run [PORT=3001 APIKey='aa296bf469ee48d2b1222b3d9a6ade70' node server.js] to start the app
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, ()=> {
     console.log(`app is running on port ${PORT}`);
 });
